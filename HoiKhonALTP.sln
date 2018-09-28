@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{7BD7193A-211B-9F1E-F3C7-E90C797011D3}") = "HoiKhonALTP", "Assembly-CSharp.csproj", "{A6E9893A-28C5-B29F-3C15-07D9BC3A0F4E}"
+EndProject
+Project("{7BD7193A-211B-9F1E-F3C7-E90C797011D3}") = "HoiKhonALTP", "Assembly-CSharp-Editor.csproj", "{66D58CAC-B960-7A2C-7128-0F6E90372F18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6E9893A-28C5-B29F-3C15-07D9BC3A0F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E9893A-28C5-B29F-3C15-07D9BC3A0F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E9893A-28C5-B29F-3C15-07D9BC3A0F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6E9893A-28C5-B29F-3C15-07D9BC3A0F4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D58CAC-B960-7A2C-7128-0F6E90372F18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D58CAC-B960-7A2C-7128-0F6E90372F18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D58CAC-B960-7A2C-7128-0F6E90372F18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D58CAC-B960-7A2C-7128-0F6E90372F18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
