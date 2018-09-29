@@ -64,4 +64,14 @@ public class tk2dUIAudioManager : MonoBehaviour
     {
         audioSrc.PlayOneShot(clip, AudioListener.volume);
     }
+
+	public void curentStop()
+	{
+		audioSrc.Stop();
+
+	}
+	public bool CheckPlay()
+	{
+		return audioSrc.isPlaying;
+	}
 }

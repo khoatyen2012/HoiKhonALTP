@@ -84,6 +84,12 @@
      <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\MonoPInvokeCallbackAttribute.cs" />
      <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\RewardBasedVideoAdClient.cs" />
      <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\Utils.cs" />
+     <Compile Include="Assets\Scripts\Altp\Controller\AlGameController.cs" />
+     <Compile Include="Assets\Scripts\Altp\Controller\AlPopupController.cs" />
+     <Compile Include="Assets\Scripts\Altp\Controller\AlSoundController.cs" />
+     <Compile Include="Assets\Scripts\Altp\UI\AlMainGame.cs" />
+     <Compile Include="Assets\Scripts\Altp\moduls\AiLaTrieuPhu.cs" />
+     <Compile Include="Assets\Scripts\Altp\moduls\AltpUser.cs" />
      <Compile Include="Assets\Scripts\Configs\Config.cs" />
      <Compile Include="Assets\Scripts\Configs\ShareRate.cs" />
      <Compile Include="Assets\Scripts\Controller\GameController.cs" />
@@ -205,6 +211,7 @@
      <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Dark\Fonts\Nunito16.fnt" />
      <None Include="Assets\TK2DROOT\tk2dUI_demo\Assets\Dark\Fonts\Nunito32.fnt" />
      <None Include="Assets\GoogleMobileAds\Editor\GoogleMobileAdsDependencies.xml" />
+     <None Include="Assets\Resources\databasez.txt" />
      <None Include="Assets\TK2DROOT\tk2d\Shaders\AdditiveVertexColor.shader" />
      <None Include="Assets\TK2DROOT\tk2d_demo\democameradata\source\democamerafont.fnt" />
  <Reference Include="UnityEngine.UI">
