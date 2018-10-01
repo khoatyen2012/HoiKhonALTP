@@ -71,11 +71,239 @@ public class AlGameController : MonoBehaviour {
 	void Start () {
 		string ss = ReadText.readTextFile(sText);
 		GetDaTa(ss);
+		maxlevel = DataManager.GetHightScoreALTP();
+
+		AlSoundController.Instance.PlayBatDau();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (currentState == State.Question || currentState == State.Help)
+		{
+			if (demframe < 30)
+			{
+				demframe++;
+			}
+			else
+			{
+				dTime--;
+				txtTime.text = "" + dTime;
+				if (dTime <= 10)
+				{
+					txtTime.color = new Color(1, 0, 1, 1);
+				}
+
+				demframe = 0;
+				if (dTime <= 0)
+				{
+					setLaiVanSam("traloisai");
+					currentState = State.GameOver;
+
+					int tmgb = level - 1;
+					if (tmgb < 5)
+					{
+						tmgb = 0;
+					}
+					else if (tmgb >= 5 && tmgb < 10)
+					{
+						tmgb = 5;
+					}
+					else if (tmgb >= 10 && tmgb < 15)
+					{
+						tmgb = 10;
+					}
+					else
+					{
+						tmgb = 15;
+					}
+
+					DataManager.SaveHightScoreALTP(tmgb);
+					DataManager.SaveHightSecondALTP(dTime);
+					AlPopupController.instance.ShowPopupGameOver(tmgb,60-dTime);
+					AlSoundController.Instance.PlayHetGio();
+				}
+			}
+
+		}
+	}
+
+	IEnumerator WaitTimeVuot14(float time)
+	{
+		//do something...............
+		yield return new WaitForSeconds(time);
+
+
+		if (level == 14)
+		{
+			AlSoundController.Instance.PlayVuotQua14();
+			nextgame(7f);
+		}
+
+
+	}
+
+	IEnumerator WaitTimeNextLevel(float time)
+	{
+		//do something...............
+		yield return new WaitForSeconds(time);
+
+		DapAnController.instance.resetDapAN();
+		currentState = State.Question;
+		suget();
+
+
+
+
+	}
+
+	void nextgame(float ss)
+	{
+		level++;
+		StartCoroutine(WaitTimeNextLevel(ss));
+	}
+
+	IEnumerator WaitTimeWin(float time)
+	{
+		//do something...............
+		yield return new WaitForSeconds(time);
+
+		DataManager.SaveHightScoreALTP(15);
+		DataManager.SaveHightSecondALTP(dTime);
+
+		AlSoundController.Instance.PlayCamXuc();
+		AlPopupController.instance.ShowPopUpWin();
+
+
+	}
+
+	IEnumerator WaitTimeCau10(float time)
+	{
+		//do something...............
+		yield return new WaitForSeconds(time);
+
+		AlSoundController.Instance.PlayCamXuc();
+		nextgame(7f);
+
+	}
+
+	public  void doXuLy()
+	{
+		AlSoundController.Instance.Stop();
+		if (truecase == selectCase)
+		{
+			//LevelController.instance.nhapnhay();
+			setLaiVanSam("traloidung");
+
+
+			if (level == 15)
+			{
+				AlSoundController.Instance.PlayVuotQua15();
+				//se xu ly ket thuc o day
+				StartCoroutine(WaitTimeWin(7f));
+			}
+			else
+			{
+				if (truecase == 1)
+				{
+					AlSoundController.Instance.PlayDungA();
+
+				}
+				if (truecase == 2)
+				{
+					AlSoundController.Instance.PlayDungB();
+				}
+				if (truecase == 3)
+				{
+					AlSoundController.Instance.PlayDungC();
+				}
+
+				if (truecase == 4)
+				{
+					AlSoundController.Instance.PlayDungD();
+				}
+
+				if (level == 14)
+				{
+					StartCoroutine(WaitTimeVuot14(3f));
+				}
+				else
+				{
+					if (level == 10)
+					{
+						StartCoroutine(WaitTimeCau10(3f));
+					}
+					else
+					{
+						nextgame(5f);
+					}
+
+				}
+			}
+
+
+
+
+
+
+
+		}
+		else
+		{
+			setLaiVanSam("traloisai");
+			if (truecase == 1)
+			{
+				AlSoundController.Instance.PlaySaiA();
+			}
+			if (truecase == 2)
+			{
+				AlSoundController.Instance.PlaySaiB();
+			}
+			if (truecase == 3)
+			{
+				AlSoundController.Instance.PlaySaiC();
+			}
+
+			if (truecase == 4)
+			{
+				AlSoundController.Instance.PlaySaiD();
+			}
+
+			currentState = State.GameOver;
+			StartCoroutine(WaitTimeGameOver(4f));
+		}
+	}
+
+	IEnumerator WaitTimeGameOver(float time)
+	{
+		//do something...............
+		yield return new WaitForSeconds(time);
+
+		int tmgb = level - 1;
+		if (tmgb < 5)
+		{
+			tmgb = 0;
+		}
+		else if (tmgb >= 5 && tmgb < 10)
+		{
+			tmgb = 5;
+		}
+		else if (tmgb >= 10 && tmgb < 15)
+		{
+			tmgb = 10;
+		}
+		else
+		{
+			tmgb = 15;
+		}
+
+
+		DataManager.SaveHightScoreALTP(tmgb);
+		DataManager.SaveHightSecondALTP(dTime);
+
+		AlPopupController.instance.ShowPopupGameOver(tmgb, 60 - dTime);
+
+
 	}
 
 	public void suget()
@@ -100,10 +328,10 @@ public class AlGameController : MonoBehaviour {
 		stDAC="C." +lstTMG[chon].Casec;
 		stDAD="D." +lstTMG[chon].Cased;
 
-		if (stQuestion.Length > 192) {
-			txtQuestion.scale = new Vector3 (0.4f,0.4f,0.4f);
-		} else {
+		if (stQuestion.Length > 230) {
 			txtQuestion.scale = new Vector3 (0.45f,0.45f,0.45f);
+		} else {
+			txtQuestion.scale = new Vector3 (0.5f,0.5f,0.5f);
 		}
 
 
@@ -248,6 +476,101 @@ public class AlGameController : MonoBehaviour {
 	public void setLaiVanSam(string caij)
 	{
 		spLaiVanSam.SetSprite(caij);
+	}
+
+	public void setDefault()
+	{
+		level = 1;
+
+		currentState = State.Question;
+
+
+	}
+
+	public void helpNamMuoi()
+	{
+		List<int> tmgList = new List<int>();
+		for (int i = 1; i <= 4; i++)
+		{
+			if (i != truecase)
+			{
+				tmgList.Add(i);
+			}
+		}
+		int chon = UnityEngine.Random.Range(0, tmgList.Count);
+		tmgList.Remove(chon);
+		LoaiPhuongAnSai(tmgList[0]);
+		LoaiPhuongAnSai(tmgList[1]);
+
+		doPhuongAnSai(tmgList[0], tmgList[1]);
+
+
+	}
+
+	void doPhuongAnSai(int k, int p)
+	{
+		if (k == 1)
+		{
+			if (p == 2)
+			{
+				AlSoundController.Instance.PlayAB();
+			}
+
+			if (p == 3)
+			{
+				AlSoundController.Instance.PlayAC();
+			}
+
+			if (p == 4)
+			{
+				AlSoundController.Instance.PlayAD();
+			}
+		}
+		else if (k == 2)
+		{
+			if (p == 3)
+			{
+				AlSoundController.Instance.PlayBC();
+			}
+
+			if (p == 4)
+			{
+				AlSoundController.Instance.PlayBD();
+			}
+		}
+		else
+		{
+			if (p == 4)
+			{
+				AlSoundController.Instance.PlayCD();
+			}
+		}
+	}
+
+	void LoaiPhuongAnSai(int k)
+	{
+		if (k == 1)
+		{
+			//txtDAA.text = "";
+			DAA.GetChild (0).GetComponent<tk2dTextMesh> ().text = "";
+			DAA.GetChild (1).GetComponent<tk2dTextMesh> ().text = "";
+		}
+		else if (k == 2)
+		{
+			DAB.GetChild (0).GetComponent<tk2dTextMesh> ().text = "";
+			DAB.GetChild (1).GetComponent<tk2dTextMesh> ().text = "";
+		}
+		else if (k == 3)
+		{
+			DAC.GetChild (0).GetComponent<tk2dTextMesh> ().text = "";
+			DAC.GetChild (1).GetComponent<tk2dTextMesh> ().text = "";
+		}
+		else
+		{
+			DAD.GetChild (0).GetComponent<tk2dTextMesh> ().text = "";
+			DAD.GetChild (1).GetComponent<tk2dTextMesh> ().text = "";
+		}
+		currentState = State.Question;
 	}
 
 	void GetDaTa(string tmg)

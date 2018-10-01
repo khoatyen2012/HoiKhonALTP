@@ -87,7 +87,13 @@
      <Compile Include="Assets\Scripts\Altp\Controller\AlGameController.cs" />
      <Compile Include="Assets\Scripts\Altp\Controller\AlPopupController.cs" />
      <Compile Include="Assets\Scripts\Altp\Controller\AlSoundController.cs" />
+     <Compile Include="Assets\Scripts\Altp\Controller\DapAnController.cs" />
+     <Compile Include="Assets\Scripts\Altp\Controller\TroGiupControlller.cs" />
+     <Compile Include="Assets\Scripts\Altp\UI\AlGameOver.cs" />
      <Compile Include="Assets\Scripts\Altp\UI\AlMainGame.cs" />
+     <Compile Include="Assets\Scripts\Altp\UI\KhanGia.cs" />
+     <Compile Include="Assets\Scripts\Altp\UI\NguoiThan.cs" />
+     <Compile Include="Assets\Scripts\Altp\UI\Win15.cs" />
      <Compile Include="Assets\Scripts\Altp\moduls\AiLaTrieuPhu.cs" />
      <Compile Include="Assets\Scripts\Altp\moduls\AltpUser.cs" />
      <Compile Include="Assets\Scripts\Configs\Config.cs" />

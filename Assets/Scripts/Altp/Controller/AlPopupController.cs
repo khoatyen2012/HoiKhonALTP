@@ -22,6 +22,61 @@ public class AlPopupController : MonoBehaviour {
 	public float hidePostionY;
 	public GameObject sha;
 	public AlMainGame mainGame;
+	public Win15 iwin;
+	public AlGameOver gameOver;
+	public KhanGia khangia;
+	public NguoiThan nguoithan;
+
+	public void ShowPopUpNguoiThan()
+	{
+		nguoithan.transform.position = new Vector3(nguoithan.transform.position.x, showPositionY, 60f);
+	}
+
+	public void HidePopupNguoiThan()
+	{
+		StartCoroutine(ieMoveUp(nguoithan.gameObject));
+
+	}
+
+
+
+	public void HidePopupKhanGia()
+	{
+		StartCoroutine(ieMoveUp(khangia.gameObject));
+
+	}
+
+	public void ShowPopupKhanGia()
+	{
+		khangia.setPhanTram();
+		khangia.transform.position = new Vector3(khangia.transform.position.x, showPositionY, 60f);
+	}
+
+	public void HidePopupGameOver()
+	{
+		StartCoroutine(ieMoveUp(gameOver.gameObject));
+
+	}
+
+	public void ShowPopupGameOver(int level,int maxlevel)
+	{
+		gameOver.setlevel(level, maxlevel);
+		StartCoroutine(ieMoveDown(gameOver.gameObject));
+		HidePopupKhanGia();
+		HidePopupNguoiThan();
+		nguoithan.resetNguoiThan();
+
+	}
+
+	public void ShowPopUpWin()
+	{
+		iwin.transform.position = new Vector3(iwin.transform.position.x, showPositionY, 10f);
+	}
+
+	public void HidePopUpWin()
+	{
+		iwin.transform.position = new Vector3(iwin.transform.position.x, hidePostionY, 10f);
+	}
 
 
 	public void ShowMainGame()
