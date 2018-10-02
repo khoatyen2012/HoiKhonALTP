@@ -92,7 +92,10 @@
      <Compile Include="Assets\Scripts\Altp\UI\AlGameOver.cs" />
      <Compile Include="Assets\Scripts\Altp\UI\AlMainGame.cs" />
      <Compile Include="Assets\Scripts\Altp\UI\KhanGia.cs" />
+     <Compile Include="Assets\Scripts\Altp\UI\MaxScore.cs" />
      <Compile Include="Assets\Scripts\Altp\UI\NguoiThan.cs" />
+     <Compile Include="Assets\Scripts\Altp\UI\StopGame.cs" />
+     <Compile Include="Assets\Scripts\Altp\UI\TuVan.cs" />
      <Compile Include="Assets\Scripts\Altp\UI\Win15.cs" />
      <Compile Include="Assets\Scripts\Altp\moduls\AiLaTrieuPhu.cs" />
      <Compile Include="Assets\Scripts\Altp\moduls\AltpUser.cs" />

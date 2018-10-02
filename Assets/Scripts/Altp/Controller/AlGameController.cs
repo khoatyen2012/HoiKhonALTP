@@ -74,7 +74,25 @@ public class AlGameController : MonoBehaviour {
 		maxlevel = DataManager.GetHightScoreALTP();
 
 		AlSoundController.Instance.PlayBatDau();
+		btnPower.OnClick += btnPower_OnClick;
+	}
 
+	void btnPower_OnClick()
+	{
+		try
+		{
+			if (currentState == State.Question )
+			{
+
+				currentState = State.PauseGame;
+				AlPopupController.instance.ShowPopupStop(level - 1);
+			}
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 	
 	// Update is called once per frame
@@ -157,10 +175,23 @@ public class AlGameController : MonoBehaviour {
 
 	}
 
+	public void doSave()
+	{
+
+		DataManager.SaveHightScoreALTP(level - 1);
+		DataManager.SaveHightSecondALTP(dTime);
+	}
+
+
+
 	void nextgame(float ss)
 	{
 		level++;
 		StartCoroutine(WaitTimeNextLevel(ss));
+		if(level>=6)
+		{
+			TroGiupControlller.instance.setEnableTuVan ();
+		}
 	}
 
 	IEnumerator WaitTimeWin(float time)

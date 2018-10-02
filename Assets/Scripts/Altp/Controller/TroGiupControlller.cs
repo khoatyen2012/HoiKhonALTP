@@ -35,7 +35,14 @@ public class TroGiupControlller : MonoBehaviour {
 		btnHoiNguoiThan.gameObject.GetComponent<BoxCollider>().enabled = true;
 		btnDoiCauHoi.gameObject.GetComponent<tk2dSprite>().SetSprite("doicauhoi");
 		btnDoiCauHoi.gameObject.GetComponent<BoxCollider>().enabled = true;
+		btnDoiCauHoi.gameObject.SetActive (false);
 	}
+
+	public void setEnableTuVan ()
+	{
+		btnDoiCauHoi.gameObject.SetActive (true);
+	}
+
 
 	IEnumerator WaitTimeNamMUoi(float time)
 	{
@@ -106,7 +113,6 @@ public class TroGiupControlller : MonoBehaviour {
 			{
 
 				AlGameController.instance.currentState = AlGameController.State.Help;
-
 				btnHoiNguoiThan.gameObject.GetComponent<tk2dSprite>().SetSprite("nguoithan2");
 				btnHoiNguoiThan.gameObject.GetComponent<BoxCollider>().enabled = false;
 				DapAnController.instance.doSetEnabal(false);
@@ -127,10 +133,13 @@ public class TroGiupControlller : MonoBehaviour {
 		{
 			if (AlGameController.instance.currentState == AlGameController.State.Question)
 			{
+				AlGameController.instance.currentState = AlGameController.State.Help;
 				btnDoiCauHoi.gameObject.GetComponent<tk2dSprite>().SetSprite("doicauhoi2");
 				btnDoiCauHoi.gameObject.GetComponent<BoxCollider>().enabled = false;
-				AlGameController.instance.currentState = AlGameController.State.Question;
-				AlGameController.instance.suget();
+				//AlGameController.instance.currentState = AlGameController.State.Question;
+				//AlGameController.instance.suget();
+				DapAnController.instance.doSetEnabal(false);
+				AlPopupController.instance.ShowPopUpTuVan();
 			}
 		}
 		catch (System.Exception)

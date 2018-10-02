@@ -26,6 +26,45 @@ public class AlPopupController : MonoBehaviour {
 	public AlGameOver gameOver;
 	public KhanGia khangia;
 	public NguoiThan nguoithan;
+	public TuVan tuvan;
+	public StopGame stopGame;
+	public MaxScore maxScore;
+
+	public void HidePopupMaxScore()
+	{
+		StartCoroutine(ieMoveUp(maxScore.gameObject));
+
+	}
+
+	public void ShowPopupMaxScore()
+	{
+		maxScore.setData();
+		maxScore.transform.position = new Vector3(maxScore.transform.position.x, showPositionY, 60f);
+	}
+
+	public void HidePopupStop()
+	{
+		StartCoroutine(ieMoveUp(stopGame.gameObject));
+
+	}
+
+	public void ShowPopupStop(int level)
+	{
+		stopGame.setlevel(level);
+		stopGame.transform.position = new Vector3(stopGame.transform.position.x, showPositionY, 10f);
+	}
+
+	public void ShowPopUpTuVan()
+	{
+		tuvan.transform.position = new Vector3(tuvan.transform.position.x, showPositionY, 60f);
+		tuvan.setData ();
+	}
+
+	public void HidePopupTuVan()
+	{
+		StartCoroutine(ieMoveUp(tuvan.gameObject));
+
+	}
 
 	public void ShowPopUpNguoiThan()
 	{
@@ -64,6 +103,7 @@ public class AlPopupController : MonoBehaviour {
 		StartCoroutine(ieMoveDown(gameOver.gameObject));
 		HidePopupKhanGia();
 		HidePopupNguoiThan();
+		HidePopupTuVan ();
 		nguoithan.resetNguoiThan();
 
 	}

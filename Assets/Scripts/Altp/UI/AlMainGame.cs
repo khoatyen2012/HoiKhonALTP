@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class AlMainGame : MonoBehaviour {
 
@@ -7,6 +8,22 @@ public class AlMainGame : MonoBehaviour {
 	public tk2dUIItem btnDiemCao;
 	public tk2dUIItem btnExit;
 	public tk2dUIItem btnVolums;
+	public tk2dUIItem btnHoiNGu;
+
+	void btnHoiNGu_OnClick()
+	{
+		try
+		{
+			SceneManager.LoadScene("InGame");
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
+
+	}
+
 
 	void btnVolums_OnClick()
 	{
@@ -15,12 +32,13 @@ public class AlMainGame : MonoBehaviour {
 			if(AlGameController.instance.checkVoulumOpen)
 			{
 				btnVolums.transform.GetComponent<tk2dSprite>().SetSprite("vollock");
-
+				AlSoundController.Instance.Stop();
+				AlSoundController.Instance.PauseBGMusic();
 				AlGameController.instance.checkVoulumOpen=false;
 			}else
 			{
 				btnVolums.transform.GetComponent<tk2dSprite>().SetSprite("volopen");
-
+				AlSoundController.Instance.rePlayBGMusic();
 				AlGameController.instance.checkVoulumOpen=true;
 			}
 		}
@@ -82,7 +100,8 @@ public class AlMainGame : MonoBehaviour {
 	{
 		try
 		{
-			
+			AlPopupController.instance.ShowPopupMaxScore();
+			AlPopupController.instance.HideMainGame();
 		}
 		catch (System.Exception)
 		{
@@ -98,6 +117,7 @@ public class AlMainGame : MonoBehaviour {
 		btnContinute.OnClick += btnContinute_OnClick;
 		btnExit.OnClick += btnExit_OnClick;
 		btnVolums.OnClick += btnVolums_OnClick;
+		btnHoiNGu.OnClick += btnHoiNGu_OnClick;
 
 	}
 
