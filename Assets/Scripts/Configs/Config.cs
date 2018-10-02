@@ -17,6 +17,9 @@ public class Config  {
     public static string adsID = "ca-app-pub-2577061470072962/8897317322";
     public static string adsInID = "ca-app-pub-2577061470072962/7734556697";
 
+    public static string adsIdBanerAL = "ca-app-pub-2577061470072962/9815633005";
+    public static string adsInIdAL = "ca-app-pub-2577061470072962/9380518730";
+
 
 #endif
 

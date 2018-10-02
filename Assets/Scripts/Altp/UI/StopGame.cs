@@ -17,7 +17,7 @@ public class StopGame : MonoBehaviour {
 	{
 		// Create a 320x50 banner at the top of the screen.
 		bannerView = new BannerView(
-			Config.adsID, AdSize.Banner, AdPosition.Top);
+            Config.adsIdBanerAL, AdSize.Banner, AdPosition.Top);
 		// Create an empty ad request.
 
 

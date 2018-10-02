@@ -15,7 +15,7 @@ public class AlGameOver : MonoBehaviour {
 	private void LoadAdsInterstitial()
 	{
 		// Initialize an InterstitialAd.
-		interstitial = new InterstitialAd(Config.adsInID);
+        interstitial = new InterstitialAd(Config.adsInIdAL);
 		// Create an empty ad request.
 		AdRequest requestIN = new AdRequest.Builder().AddTestDevice(AdRequest.TestDeviceSimulator).AddTestDevice("365BCE5DDF729BFD1E6E40D79CE8F42B").Build();
 		// Load the interstitial with the request.
