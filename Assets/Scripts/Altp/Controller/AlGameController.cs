@@ -495,7 +495,7 @@ public class AlGameController : MonoBehaviour {
 	{
 		//do something...............
 		yield return new WaitForSeconds(time);
-		AlSoundController.Instance.Stop();
+		//AlSoundController.Instance.Stop();
 		if (currentState == State.Question)
 		{
 
