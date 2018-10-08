@@ -1,19 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Altp\Controller\AlGameController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Altp\Controller\AlSoundController.cs">
     <Files>
       <File FileName="Assets\Scripts\Altp\Controller\AlPopupController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Altp\Controller\AlGameController.cs" Line="498" Column="5" />
-      <File FileName="Assets\Scripts\Altp\Controller\TroGiupControlller.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Altp\UI\TuVan.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Altp\UI\NguoiThan.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Altp\UI\AlMainGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Altp\UI\AlGameOver.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Altp\UI\StopGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Altp\UI\MaxScore.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\MainGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Configs\Config.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\GameOver.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Altp\Controller\AlGameController.cs" Line="268" Column="33" />
+      <File FileName="Assets\Scripts\Altp\Controller\AlSoundController.cs" Line="503" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

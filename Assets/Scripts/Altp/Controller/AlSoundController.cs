@@ -489,7 +489,7 @@ public class AlSoundController : MonoBehaviour {
 		}
 	}
 
-	public void PlayDuaRa3()
+	public void PlayHetMoc5()
 	{
 		if (AlGameController.instance.checkVoulumOpen) {
 			tk2dUIAudioManager.Instance.Play (arrAudioClip [46]);
@@ -498,7 +498,7 @@ public class AlSoundController : MonoBehaviour {
 		}
 	}
 
-	public void PlayDuaRa4()
+	public void PlayHetMoc10()
 	{
 		if (AlGameController.instance.checkVoulumOpen) {
 			tk2dUIAudioManager.Instance.Play (arrAudioClip [47]);
@@ -506,6 +506,8 @@ public class AlSoundController : MonoBehaviour {
 			ok = false;
 		}
 	}
+
+
 
 	public void Stop()
 	{

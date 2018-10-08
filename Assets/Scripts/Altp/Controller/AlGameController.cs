@@ -213,8 +213,18 @@ public class AlGameController : MonoBehaviour {
 		//do something...............
 		yield return new WaitForSeconds(time);
 
-		AlSoundController.Instance.PlayCamXuc();
+		AlSoundController.Instance.PlayHetMoc10();
 		nextgame(7f);
+
+	}
+
+	IEnumerator WaitTimeCau5(float time)
+	{
+		//do something...............
+		yield return new WaitForSeconds(time);
+
+		AlSoundController.Instance.PlayHetMoc5 ();
+		nextgame(13f);
 
 	}
 
@@ -254,7 +264,9 @@ public class AlGameController : MonoBehaviour {
 					AlSoundController.Instance.PlayDungD();
 				}
 
-				if (level == 14)
+				if (level == 5) {
+					StartCoroutine(WaitTimeCau5(3f));
+				}else if (level == 14)
 				{
 					StartCoroutine(WaitTimeVuot14(3f));
 				}
