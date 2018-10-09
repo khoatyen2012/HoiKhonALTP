@@ -506,7 +506,14 @@ public class AlSoundController : MonoBehaviour {
 			ok = false;
 		}
 	}
-
+	public void PlayHoiToTuVan()
+	{
+		if (AlGameController.instance.checkVoulumOpen) {
+			tk2dUIAudioManager.Instance.Play (arrAudioClip [48]);
+			audioSourceBGMusicCreated.Pause ();
+			ok = false;
+		}
+	}
 
 
 	public void Stop()
