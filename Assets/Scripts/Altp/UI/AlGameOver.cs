@@ -5,6 +5,7 @@ using GoogleMobileAds.Api;
 public class AlGameOver : MonoBehaviour {
 
 	public tk2dUIItem btnContinute;
+	public tk2dUIItem btnALTP;
 
 	public tk2dTextMesh txtLevel;
 	public tk2dTextMesh txtMaxLevel;
@@ -40,12 +41,19 @@ public class AlGameOver : MonoBehaviour {
 	{
 		txtLevel.text = "Vượt qua: Câu " + level;
 		txtMaxLevel.text = "Thời gian: " + maxlevel+" giây.";
-		LoadAdsInterstitial();
+		if (AlGameController.instance.level % 2 == 0) {
+			LoadAdsInterstitial ();
+		}
 	}
 
 
 	void btnContinute_OnClick()
 	{
+
+		if (AlGameController.instance.level % 2 == 0) {
+			ShowAdsInterstitial();
+		}
+
 		try
 		{
 			AlSoundController.Instance.PlayTamBiet();
@@ -65,7 +73,23 @@ public class AlGameOver : MonoBehaviour {
 
 			throw;
 		}
-		ShowAdsInterstitial();
+
+	}
+
+	void btnALTP_OnClick()
+	{
+		try
+		{
+	
+			ShareRate.RateALTP();
+
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
+
 	}
 
 
@@ -73,6 +97,7 @@ public class AlGameOver : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		btnContinute.OnClick += btnContinute_OnClick;
+		btnALTP.OnClick += btnALTP_OnClick;
 
 	}
 
