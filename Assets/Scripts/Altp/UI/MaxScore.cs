@@ -9,7 +9,7 @@ public class MaxScore : MonoBehaviour {
 
 
 	public tk2dUIItem btnHome;
-
+	public tk2dUIItem btnXepHang;
 	public tk2dTextMesh txtCau;
 
 	BannerView bannerView;
@@ -71,13 +71,18 @@ public class MaxScore : MonoBehaviour {
 		}
 	}
 
+	public void btnXepHang_OnClick()
+	{
+		HideAdsBanner();
+		SceneManager.LoadScene("RankALTP");
+	}
 
 
 	// Use this for initialization
 	void Start () {
 
 		btnHome.OnClick += btnHome_OnClick;
-
+		btnXepHang.OnClick += btnXepHang_OnClick;
 		LoadAdsBanner();
 	}
 

@@ -11,6 +11,63 @@ public class DataManager  {
 
 	private static string TAG_HIGHT_ALTP = "altp";
 	private static string TAG_SECOND_ALTP = "second";
+	private static string TAG_NAME = "myname";
+	private static string TAG_MAC = "mymac";
+	private static string TAG_TOP = "mytop";
+
+
+	public static string GetMac()
+	{
+		if (PlayerPrefs.HasKey(TAG_MAC))
+		{
+			return PlayerPrefs.GetString(TAG_MAC);
+		}
+		else
+		{
+			return "";
+		}
+	}
+
+	public static void SaveMac(string newHightScore)
+	{
+		PlayerPrefs.SetString(TAG_MAC, newHightScore);
+	}
+
+	public static int GetTop()
+	{
+		if (PlayerPrefs.HasKey(TAG_TOP))
+		{
+			return PlayerPrefs.GetInt(TAG_TOP);
+		}
+		else
+		{
+			return 112110;
+		}
+	}
+
+	public static void SaveTop(int newHightScore)
+	{
+		PlayerPrefs.SetInt(TAG_TOP, newHightScore);
+	}
+
+
+
+	public static string GetName()
+	{
+		if (PlayerPrefs.HasKey(TAG_NAME))
+		{
+			return PlayerPrefs.GetString(TAG_NAME);
+		}
+		else
+		{
+			return "";
+		}
+	}
+
+	public static void SaveName(string newHightScore)
+	{
+		PlayerPrefs.SetString(TAG_NAME, newHightScore);
+	}
 
 	public static int GetHightSecondALTP()
 	{
