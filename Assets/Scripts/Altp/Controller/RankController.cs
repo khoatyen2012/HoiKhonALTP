@@ -33,8 +33,15 @@ public class RankController : MonoBehaviour {
 
 	void btnCancel_OnClick()
 	{
+		try
+		{
+			
 		doHide ();
 		StartCoroutine(WaitForRequest());
+		}catch(System.Exception)
+		{
+
+		}
 	}
 	void btnOK_OnClick()
 	{
@@ -143,9 +150,13 @@ public class RankController : MonoBehaviour {
 		#if UNITY_IPHONE
 		hedieuhanh = "HO";
 		#endif
-
+		try
+		{
 		getInfoData ();
+	}catch(System.Exception)
+	{
 
+	}
 	}
 
 	void getInfoData()
