@@ -154,6 +154,7 @@ public class TroGiupControlller : MonoBehaviour {
 	{
 		//do something...............
 		yield return new WaitForSeconds (time);
+		AlSoundController.Instance.PlayPing ();
 		AlPopupController.instance.ShowPopUpTuVan();
 	}
 

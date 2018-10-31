@@ -8,7 +8,7 @@ public class ShareRate
 	public static string titleShare = "Hỏi Ngu - Thách Thức Sự Trong Sáng";
     public static string LinkShare = "https://play.google.com/store/apps/details?id=hoixoay.hoingu.dapxoay";
     public static string LinkShareBalo = "https://play.google.com/store/apps/developer?id=Balo+Studios";
-	public static string LinkALTP = "https://play.google.com/store/apps/details?id=balo.ai.trieuphu";
+	public static string LinkALTP = "https://play.google.com/store/apps/details?id=tana.daithanh.lichvannien";
 
 	//public static string LinkShare = "https://itunes.apple.com/us/app/hỏi-ngu-hại-não/id1373120021";
 	//public static string LinkShareBalo = "https://play.google.com/store/apps/developer?id=Balo+Studios";
