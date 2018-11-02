@@ -1,12 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Altp\UI\AlGameOver.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Altp\Controller\AlGameController.cs">
     <Files>
       <File FileName="Assets\Scripts\Altp\Controller\RankController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Altp\UI\TuVan.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Altp\Controller\TroGiupControlller.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Altp\Controller\AlSoundController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Altp\UI\AlGameOver.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Configs\ShareRate.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Configs\Config.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Altp\Controller\AlGameController.cs" Line="638" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
